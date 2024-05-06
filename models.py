@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Client(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -23,6 +22,3 @@ class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     total_sum = models.DecimalField(max_digits=10, decimal_places=2)
     date_of_order = models.DateTimeField()
-
-
-
