@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordered Products</title>
+</head>
+<body>
+    <h1>Ordered Products</h1>
+
+    <h2>Last 7 Days:</h2>
+    <ul>
+        {% for product in last_week %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Last 30 Days:</h2>
+    <ul>
+        {% for product in last_month %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Last 365 Days:</h2>
+    <ul>
+        {% for product in last_year %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
