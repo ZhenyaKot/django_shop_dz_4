@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Client, Order, Product
 from django.views.generic import TemplateView
 from django.utils import timezone
+from .forms import ProductForm
 
 
 def index(request):
@@ -55,3 +56,14 @@ class ProductOrder(TemplateView):
         context['last_year'] = products_last_year
 
         return context
+
+
+def product_photo(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('ok')
+    else:
+        form = ProductForm()
+    return render(request, 'shopapp/photo_product.html', {'form': form})
