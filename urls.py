@@ -8,6 +8,6 @@ urlpatterns = [
     path('create_order', create_order, name='create_order'),
     path('create_product', create_product, name='create_product'),
     path('product/order/', ProductOrder.as_view(), name='product_order'),
-    path('/product_photo/', product_photo, name='product_photo'),
+    path('product_photo/', product_photo, name='product_photo'),
 
 ]
